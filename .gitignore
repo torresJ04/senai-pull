@@ -1,0 +1,26 @@
+# Environment and secrets
+.env
+venv/
+.venv/
+env/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.pytest_cache/
+.mypy_cache/
+*.egg-info/
+dist/
+build/
+
+# Project data (local state and reports)
+data/
+
+# IDE / OS
+.idea/
+.vscode/
+*.swp
+.DS_Store
+Thumbs.db
