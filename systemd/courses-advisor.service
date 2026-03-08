@@ -1,0 +1,16 @@
+[Unit]
+Description=SENAI Courses Advisor - Scraper e notificações Telegram
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=jotorres
+WorkingDirectory=/home/jotorres/senai-pull
+ExecStart=/home/jotorres/senai-pull/venv/bin/python main.py
+Restart=always
+RestartSec=60
+Environment=PYTHONUNBUFFERED=1
+
+[Install]
+WantedBy=multi-user.target

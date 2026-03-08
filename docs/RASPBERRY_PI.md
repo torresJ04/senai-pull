@@ -115,13 +115,18 @@ Salve (Ctrl+O, Enter) e saia (Ctrl+X). **Nunca faça commit do `.env`** (ele dev
 
 Para que o app inicie no boot e seja reiniciado em caso de falha, use um serviço systemd.
 
-### 5.1 Criar o arquivo de serviço
+### 5.1 Instalar os arquivos de serviço
+
+O repositório inclui os arquivos em `systemd/`. No Pi, copie-os para o systemd (ajuste o caminho se o projeto não estiver em `~/senai-pull`):
 
 ```bash
-sudo nano /etc/systemd/system/courses-advisor.service
+sudo cp ~/senai-pull/systemd/courses-advisor.service /etc/systemd/system/
+sudo cp ~/senai-pull/systemd/courses-advisor-bot.service /etc/systemd/system/
 ```
 
-Cole o conteúdo abaixo e **ajuste** `User`, `WorkingDirectory` e `ExecStart` se o projeto estiver em outro usuário ou caminho:
+Se o seu usuário ou pasta forem diferentes, edite os arquivos em `systemd/` antes de copiar, ou edite depois em `/etc/systemd/system/` (campos `User`, `WorkingDirectory`, `ExecStart`).
+
+**Alternativa:** criar manualmente com `sudo nano /etc/systemd/system/courses-advisor.service` e colar o conteúdo abaixo (ajustando User e caminhos):
 
 ```ini
 [Unit]

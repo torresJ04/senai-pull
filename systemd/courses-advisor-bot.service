@@ -1,0 +1,16 @@
+[Unit]
+Description=SENAI Courses Advisor - Bot Telegram
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=jotorres
+WorkingDirectory=/home/jotorres/senai-pull
+ExecStart=/home/jotorres/senai-pull/venv/bin/python bot.py
+Restart=always
+RestartSec=30
+Environment=PYTHONUNBUFFERED=1
+
+[Install]
+WantedBy=multi-user.target
